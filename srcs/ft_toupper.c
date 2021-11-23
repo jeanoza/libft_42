@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:20:51 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/23 11:40:51 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/23 11:42:28 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/23 11:51:35 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+int	ft_toupper(int c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char *)dst)[i] = ((char *) src)[i];
-		++i;
-	}
-	((char *)dst)[i] = 0;
-	return (dst);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 /*
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
 int	main(int ac, char **av)
 {
-	char	dst[100];
-	char	dst_ft[100];
-
 	(void)ac;
-	printf("ft_memcpy:%s, (dst_ft):%s\n", ft_memcpy(dst_ft, av[1], ft_atoi(av[2])), dst_ft);
-	printf("memcpy:%s, (dst):%s\n", memcpy(dst, av[1], ft_atoi(av[2])), dst);
+	printf("origin:%c, result:%c", av[1][0],(char)(ft_toupper(av[1][0])));
 	return (0);
 }
 */
