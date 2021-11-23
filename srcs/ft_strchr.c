@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:02:16 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/23 13:41:27 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/23 16:15:38 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*(s + i) != c)
 	{
 		++i;
-		if (i > ft_strlen(s))
+		if (i > (int) ft_strlen(s))
 			return (0);
 	}
 	return ((char *)(s + i));

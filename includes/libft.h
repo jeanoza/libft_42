@@ -4,7 +4,7 @@
 // # include <unistd.h>
 // # include <stdlib.h>
 # include <ctype.h>
-# include <unistd.h>
+# include <stdlib.h>
 
 /* ctype */
 int		ft_isalpha(int c);
@@ -15,7 +15,8 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 /* string */
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memset(void *b, int c, unsigned int len);
 void	ft_bzero(void *s, unsigned int n);
 void	*ft_memcpy(void *dst, const void *src, unsigned int n);
