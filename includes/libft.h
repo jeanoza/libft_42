@@ -19,6 +19,7 @@ int		ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, unsigned int len);
 void	ft_bzero(void *s, unsigned int n);
 void	*ft_memcpy(void *dst, const void *src, unsigned int n);
+char	*ft_strchr(const char *s, int c);
 /* stdlib */
 int		ft_atoi(char *str);
 #endif
