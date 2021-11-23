@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 10:21:19 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/23 10:21:20 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/23 10:26:14 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/23 10:52:19 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include "libft.h"
+
+void	ft_bzero(void *s, unsigned int n)
 {
-	int	result;
-	int	sign;
+	unsigned int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		++i;
+	}
+}
+/*
+#include <stdio.h>
+int main(int ac, char **av)
+{
+	int length;
 	int	i;
 
-	result = 0;
-	sign = 1;
+	length = ft_strlen(av[1]);
+	printf("before:%s\n", av[1]);
+	ft_bzero(av[1], ft_atoi(av[2]));
+	write(1, "after:", 7);
 	i = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		++i;
-	if (str[i] == '-' || str[i] == '+')
+	while (i < length)
 	{
-		if (str[i] == '-')
-			sign = -sign;
+		write(1, &av[1][i], 1);
 		++i;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = (result * 10) + (str[i] - '0');
-		++i;
-	}
-	return (result * sign);
+	return (0);
 }
+*/
