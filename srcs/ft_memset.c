@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 10:26:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/23 10:54:11 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/23 10:53:45 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/23 11:15:57 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, unsigned int n)
+void	*ft_memset(void *b, int c, unsigned int len)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((char *)s)[i] = 0;
+		((char *) b)[i] = c;
 		++i;
 	}
+	return (b);
 }
 /*
-#include <stdio.h>
-int main(int ac, char **av)
+#include<stdio.h>
+int	main(int ac, char **av)
 {
+	(void)ac;
 	int length;
 	int	i;
 
 	length = ft_strlen(av[1]);
 	printf("before:%s\n", av[1]);
-	ft_bzero(av[1], ft_atoi(av[2]));
-	write(1, "after:", 7);
+	ft_memset(av[1], 0, ft_atoi(av[2]));
+	write(1, "after:", 6);
 	i = 0;
 	while (i < length)
 	{
