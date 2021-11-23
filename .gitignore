@@ -1,0 +1,10 @@
+#for test
+main.c
+a.out
+
+#.o files
+bin/**
+
+#.a file
+libft.a
+
