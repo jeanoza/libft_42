@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:59:19 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/24 08:54:56 by kyubongchoi      ###   ########.fr       */
+/*   Updated: 2021/11/24 18:10:35 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)(s + i));
 }
+/*
 #include <stdio.h>
 #include <string.h>
 int	main(int ac, char **av)
@@ -48,3 +49,4 @@ int	main(int ac, char **av)
 		strrchr(av[1], av[2][0] + 256), strrchr(av[1], av[2][0] + 256));
 	return (0);
 }
+*/

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 15:12:39 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/24 15:12:40 by kychoi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -7,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	if (n == 0)
 		return (0);
 	i = 0;
-	while (*((unsigned char *)(s + i)) != c)
+	while (*((unsigned char *)(s + i)) != (unsigned char) c)
 	{
 		++i;
 		if (i == n)
