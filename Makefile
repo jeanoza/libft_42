@@ -26,6 +26,7 @@ SRCS		=	ft_isalpha.c \
 				ft_strnstr.c \
 				ft_atoi.c \
 				ft_strdup.c \
+				ft_calloc.c \
 
 OBJS		=	$(addprefix $(OBJ_PATH), $(SRCS:.c=.o))
 CC			=	gcc
