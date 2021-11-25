@@ -6,27 +6,24 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:12:51 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/24 18:46:20 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/25 17:16:09 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	//TODO:manage n > strlen(s1)
-	while (*((char *)(s1 + i)) == *((char *)(s2 + i)))
+	while (*((unsigned char *)(s1 + i)) == *((unsigned char *)(s2 + i)))
 	{
-		// printf("i:%zu\n", i);
 		if (i == n - 1)
 			break ;
 		++i;
 	}
-	return (*((char *)(s1 + i)) - *((char *)(s2 + i)));
+	return (*((unsigned char *)(s1 + i)) - *((unsigned char *)(s2 + i)));
 }
 /*
 #include <stdio.h>
