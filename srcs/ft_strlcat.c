@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:19:12 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/24 21:22:14 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/25 09:45:31 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
@@ -20,21 +19,18 @@ size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (dstsize == 0)
-		return (src_len);
-	if ((dst_len + src_len) < dstsize)
+	if (dstsize <= dst_len)
 		return (src_len + dstsize);
 	i = 0;
-	while (i < dstsize - dst_len)
+	while (i < dstsize - dst_len - 1)
 	{
 		*(dst + dst_len + i) = *(src + i);
 		++i;
-		if (i == dstsize - dst_len)
-			*(dst + dst_len + i) = 0;
 	}
-	return (src_len + i);
+	*(dst + dst_len + i) = 0;
+	return (src_len + dst_len);
 }
-
+/*
 #include<stdio.h>
 #include <string.h>
 int	main(int ac, char **av)
@@ -53,3 +49,4 @@ int	main(int ac, char **av)
 	printf("ft_strlcat	:%s(%zu)\n", dst_ft, result_ft);
 	return (0);
 }
+*/
