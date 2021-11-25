@@ -6,26 +6,26 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:20:51 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/24 14:33:55 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/25 18:02:40 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//TODO:FIX THIS KO IN TEST
-// void	*ft_memcpy(void *dst, const void *src, unsigned int n)
-// {
-// 	unsigned int	i;
+void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+{
+	unsigned int	i;
 
-// 	i = 0;
-// 	while (i < n)
-// 	{
-// 		((char) *(dst + i)) = *(src + i);
-// 		++i;
-// 	}
-// 	((char) *(dst + i)) = 0;
-// 	return (dst);
-// }
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
+		++i;
+	}
+	return (dst);
+}
 /*
 #include<stdio.h>
 #include<string.h>
@@ -35,9 +35,12 @@ int	main(int ac, char **av)
 	char	dst_ft[100];
 
 	(void)ac;
-	printf("ft_memcpy:%s, (dst_ft):%s\n", (char *)ft_memcpy(dst_ft, av[1], ft_atoi(av[2])), dst_ft);
-	printf("memcpy:%s, (dst):%s\n", (char *)memcpy(dst, av[1], ft_atoi(av[2])), dst);
+
+	printf("ft_memcpy:%s, (dst_ft):%s\n", (char *)ft_memcpy(dst_ft, av[1], atoi(av[2])), dst_ft);
+	printf("memcpy:%s, (dst):%s\n", (char *)memcpy(dst, av[1], atoi(av[2])), dst);
+	//NULL test
+	// printf("ft_memcpy:%p, (dst_ft):%s\n", (char *)ft_memcpy((void *)0, av[1], 3), dst_ft);
+	// printf("memcpy:%p, (dst):%s\n", (char *)memcpy((void *)0, av[1], 3), dst);
 	return (0);
 }
-
 */

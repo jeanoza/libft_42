@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:26:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/23 10:54:11 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/25 17:34:48 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_bzero(void *s, unsigned int n)
 {
 	unsigned int	i;
-
 	i = 0;
 	while (i < n)
 	{
