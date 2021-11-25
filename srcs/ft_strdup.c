@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 10:26:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/25 19:43:32 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/25 19:29:19 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/25 19:47:06 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *s1)
 {
+	char	*str;
+	size_t	len;
 	size_t	i;
+
+	len = ft_strlen(s1);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((char *)s)[i] = 0;
+		str[i] = s1[i];
 		++i;
 	}
+	str[i] = 0;
+	return (str);
 }
 /*
 #include <stdio.h>
-int main(int ac, char **av)
+#include <string.h>
+int	main(int ac, char **av)
 {
-	int length;
-	int	i;
+	(void)ac;
+	char	*str = strdup(av[1]);
+	char	*str_ft = ft_strdup(av[1]);
 
-	length = ft_strlen(av[1]);
-	printf("before:%s\n", av[1]);
-	ft_bzero(av[1], ft_atoi(av[2]));
-	write(1, "after:", 7);
-	i = 0;
-	while (i < length)
-	{
-		write(1, &av[1][i], 1);
-		++i;
-	}
+	printf("strdup:		%s\n", str);
+	printf("ft_strdup:	%s\n", str_ft);
 	return (0);
 }
 */

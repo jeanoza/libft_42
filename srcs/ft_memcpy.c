@@ -6,15 +6,15 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:20:51 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/25 18:09:49 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/25 19:44:32 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
