@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 10:53:45 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 16:41:09 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/27 16:50:09 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/27 16:50:09 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, unsigned int len)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		((char *) b)[i] = c;
-		++i;
-	}
-	return (b);
+	write(fd, &c, 1);
 }
-/*
-#include<stdio.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	int length;
-	int	i;
 
-	length = ft_strlen(av[1]);
-	printf("before:%s\n", av[1]);
-	ft_memset(av[1], 0, ft_atoi(av[2]));
-	write(1, "after:", 6);
-	i = 0;
-	while (i < length)
-	{
-		write(1, &av[1][i], 1);
-		++i;
-	}
+/*
+int main(void)
+{
+	int	fd;
+
+	fd = open("./test/test.txt", O_WRONLY);
+	ft_putchar_fd('c', fd);
+	close(fd);
 	return (0);
 }
 */

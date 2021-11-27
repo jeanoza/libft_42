@@ -6,15 +6,16 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:26:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/25 19:43:32 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/23 10:54:11 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, unsigned int n)
 {
-	size_t	i;
+	unsigned int	i;
+
 	i = 0;
 	while (i < n)
 	{

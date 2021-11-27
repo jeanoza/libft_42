@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 16:51:18 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 16:51:19 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/25 21:37:18 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/27 16:51:46 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
 
-	if (n == 0)
-		return (0);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str || !s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (str);
 	i = 0;
-	while (*(s1 + i) != '\0' && *(s1 + i) == *(s2 + i))
+	while (i < len)
 	{
-		if (i == n - 1)
-			break ;
+		str[i] = s[start + i];
 		++i;
 	}
-	return (((unsigned char)*(s1 + i)) - ((unsigned char)*(s2 + i)));
+	str[i] = 0;
+	return (str);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-int main(int ac, char **av)
+#include <stdio.h>
+
+int	main(int ac, char **av)
 {
-	(void)ac;
-	printf("ft_strncmp:%d\n", ft_strncmp(av[1], av[2], ft_atoi(av[3])));
-	printf("strncmp:%d\n", strncmp(av[1], av[2], ft_atoi(av[3])));
+	unsigned int start = ft_atoi(av[2]);
+	size_t len = ft_atoi(av[3]);
+	printf("result:%s\n", ft_substr(av[1], start, len));
 	return (0);
 }
 */

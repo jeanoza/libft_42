@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 16:51:18 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 16:51:19 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/27 16:50:22 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/27 16:50:23 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (*(s1 + i) != '\0' && *(s1 + i) == *(s2 + i))
+	if (n == -2147483648)
 	{
-		if (i == n - 1)
-			break ;
-		++i;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (((unsigned char)*(s1 + i)) - ((unsigned char)*(s2 + i)));
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n > 9)
+		ft_putnbr_fd((n / 10), fd);
+	ft_putchar_fd((n % 10 + 48), fd);
 }
 /*
-#include<stdio.h>
-#include<string.h>
 int main(int ac, char **av)
 {
+	int	fd;
+
 	(void)ac;
-	printf("ft_strncmp:%d\n", ft_strncmp(av[1], av[2], ft_atoi(av[3])));
-	printf("strncmp:%d\n", strncmp(av[1], av[2], ft_atoi(av[3])));
+	fd = open("./test/test.txt", O_WRONLY);
+	ft_putnbr_fd(atoi(av[1]), fd);
+	close(fd);
 	return (0);
 }
 */

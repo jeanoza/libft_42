@@ -1,29 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:52:48 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 16:51:51 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/27 16:50:49 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/27 16:50:50 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	char	*result;
+	int		i;
+	int		j;
+
+	if (!s1 || !s2)
+		return (NULL);
+	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (result == NULL)
+		return (NULL);
+	i = -1;
+	while (s1[++i])
+		result[i] = s1[i];
+	j = -1;
+	while (s2[++j])
+		result[i + j] = s2[j];
+	result[i + j] = '\0';
+	return (result);
 }
 /*
 #include <stdio.h>
 int	main(int ac, char **av)
 {
+	char	*str;
+
 	(void)ac;
-	printf("origin:%c, result:%c", av[1][0],(char)(ft_tolower(av[1][0])));
+	str = ft_strjoin(av[1], av[2]);
+	printf("ft_strjoin	:%s\n", str);
+	free(str);
 	return (0);
 }
 */

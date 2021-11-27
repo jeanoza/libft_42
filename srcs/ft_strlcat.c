@@ -6,12 +6,11 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:19:12 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/25 17:17:24 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/27 16:50:56 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
