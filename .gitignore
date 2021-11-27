@@ -3,8 +3,9 @@ main.c
 a.out
 
 #.o files
-bin/**
+*.o
 
 #.a file
 libft.a
+libft.so
 
