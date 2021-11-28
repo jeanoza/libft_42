@@ -38,32 +38,31 @@ OBJS		=	$(SRCS:.c=.o)
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -I $(HEADER)
 
 NAME		=	libft.a
 
-%.o:			%.c
+BONUS_SRCS	= 	ft_lstnew.c \
+
+BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
+
+.c.o:			$(SRCS)
 				@tput setaf 5
 				@echo "compile: $^"
-				$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
+				$(CC) $(CFLAGS) -c $< -o $@
 				@tput sgr0
 
 $(NAME):		$(OBJS)
 				@tput setaf 2
-				ar rc $@ $(OBJS)
-				ranlib $@
+				ar rcs $@ $(OBJS)
 				@tput sgr0
 
 
 all:			$(NAME)
 
-so:
-				$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-				gcc -nostartfiles -shared -o libft.so $(OBJS)
-
 clean:
 				@tput setaf 1
-				rm -rf $(OBJS)
+				rm -rf $(OBJS) $(BONUS_OBJS)
 				@tput sgr0
 
 fclean:			clean
@@ -73,4 +72,7 @@ fclean:			clean
 
 re: 			fclean all
 
-.PHONY:			all clean fclean re
+bonus:			$(BONUS_OBJS)
+				ar rcs $(NAME) $(BONUS_OBJS)
+
+.PHONY:			all clean fclean re bonus
