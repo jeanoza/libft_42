@@ -35,11 +35,12 @@ SRCS		=	ft_isalpha.c \
 				ft_putnbr_fd.c \
 
 OBJS		=	$(SRCS:.c=.o)
-CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra
-NAME		=	libft.a
 
-all:			$(NAME)
+CC			=	gcc
+
+CFLAGS		=	-Wall -Werror -Wextra
+
+NAME		=	libft.a
 
 %.o:			%.c
 				@tput setaf 5
@@ -47,12 +48,14 @@ all:			$(NAME)
 				$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
 				@tput sgr0
 
-
 $(NAME):		$(OBJS)
 				@tput setaf 2
 				ar rc $@ $(OBJS)
 				ranlib $@
 				@tput sgr0
+
+
+all:			$(NAME)
 
 so:
 				$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
