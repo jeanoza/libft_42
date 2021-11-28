@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:49:07 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/28 14:21:45 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/28 15:41:07 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
 #endif

@@ -43,6 +43,7 @@ CFLAGS		=	-Wall -Werror -Wextra -I $(HEADER)
 NAME		=	libft.a
 
 BONUS_SRCS	= 	ft_lstnew.c \
+				ft_lstadd_front.c \
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
@@ -54,9 +55,8 @@ BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
 $(NAME):		$(OBJS)
 				@tput setaf 2
-				ar rcs $@ $(OBJS)
+				ar rcs $@ $^
 				@tput sgr0
-
 
 all:			$(NAME)
 
@@ -73,6 +73,8 @@ fclean:			clean
 re: 			fclean all
 
 bonus:			$(BONUS_OBJS)
-				ar rcs $(NAME) $(BONUS_OBJS)
+				@tput setaf 3
+				ar rcs $(NAME) $^
+				@tput sgr0
 
 .PHONY:			all clean fclean re bonus
