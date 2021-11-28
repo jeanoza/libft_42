@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 14:22:02 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/28 16:01:39 by kychoi           ###   ########.fr       */
+/*   Created: 2021/11/28 15:46:19 by kychoi            #+#    #+#             */
+/*   Updated: 2021/11/28 16:03:44 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*list;
+	int	i;
 
-	list = malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	i = 0;
+	while (lst != NULL)
+	{
+		++i;
+		lst = lst->next;
+	}
+	return (i);
 }
 /*
 #include <stdio.h>
-int	main(void)
+int main(void)
 {
-	t_list	*list;
+	t_list	*lst1 = ft_lstnew((void *)"first");
+	t_list	*lst2 = ft_lstnew((void *)"second");
+	t_list	*lst3 = ft_lstnew((void *)"third");
 
-	list = ft_lstnew("hello");
-	printf("content: %s\n", (char *)list->content);
+	lst1->next = lst2;
+	lst2->next = lst3;
+	printf("result:%d\n", ft_lstsize(lst1));
 	return (0);
 }
 */

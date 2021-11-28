@@ -44,6 +44,7 @@ NAME		=	libft.a
 
 BONUS_SRCS	= 	ft_lstnew.c \
 				ft_lstadd_front.c \
+				ft_lstsize.c \
 
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
