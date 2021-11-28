@@ -1,6 +1,7 @@
 #for test
 main.c
 a.out
+a.out.dSYM/
 
 #.o files
 *.o
