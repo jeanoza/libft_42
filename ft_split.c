@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:50:30 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 20:50:54 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/28 13:30:57 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	return (strs);
 }
 /*
-#include<stdio.h>//TO_REMOVE
+#include<stdio.h>
 int	main(int ac, char **av)
 {
 	(void)ac;
