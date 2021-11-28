@@ -6,13 +6,13 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:50:30 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/28 13:30:57 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/28 13:42:10 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_word_num(char const *s, char c)
+static int	counts_word_num(char const *s, char c)
 {
 	size_t	i;
 	int		word_num;
@@ -47,7 +47,7 @@ static char	**ft_free_all_tab(char **tab)
 	return (NULL);
 }
 
-static char	*ft_strndup(char const *s, int len, char **tab)
+static char	*gets_str(char const *s, int len, char **tab)
 {
 	char	*str;
 	int		i;
@@ -77,20 +77,20 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	strs = malloc(sizeof(char *) * (get_word_num(s, c) + 1));
+	strs = malloc(sizeof(char *) * (counts_word_num(s, c) + 1));
 	if (!strs)
 		return (NULL);
 	idx_strs = 0;
 	idx_start = 0;
 	idx_end = 0;
-	while (s[idx_end] && idx_strs < get_word_num(s, c))
+	while (s[idx_end] && idx_strs < counts_word_num(s, c))
 	{
 		while (s[idx_end] && s[idx_end] == c)
 			++idx_end;
 		idx_start = idx_end;
 		while (s[idx_end] && s[idx_end] != c)
 			++idx_end;
-		strs[idx_strs] = ft_strndup(s + idx_start, idx_end - idx_start, strs);
+		strs[idx_strs] = gets_str(s + idx_start, idx_end - idx_start, strs);
 		++idx_strs;
 	}
 	strs[idx_strs] = NULL;
