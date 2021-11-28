@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:49:07 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/28 16:00:46 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/28 16:28:03 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,6 @@ typedef struct s_list
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **alst, t_list *new);
 #endif

@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 16:04:51 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/28 16:10:13 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/28 16:21:37 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
@@ -28,7 +30,7 @@ int main(void)
 
 	lst1->next = lst2;
 	lst2->next = lst3;
-	printf("result:%s\n", (char *)(ft_lstlast(lst1)->content));
+	printf("result:%s\n", (char *)(ft_lstlast(NULL)->content));
 	return (0);
 }
 */
