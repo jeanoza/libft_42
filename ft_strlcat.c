@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:19:12 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 20:51:33 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/29 22:01:08 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 #include <string.h>
 int	main(int ac, char **av)
 {
-	char	dst[100] = "hel";
-	char	dst_ft[100] = "hel";
+	char	dst[10] = "hel";
+	char	dst_ft[10] = "hel";
 	size_t	result;
 	size_t	result_ft;
 
@@ -48,6 +48,7 @@ int	main(int ac, char **av)
 
 	printf("strlcat		:%s(%zu)\n", dst, result);
 	printf("ft_strlcat	:%s(%zu)\n", dst_ft, result_ft);
+	// while (1);
 	return (0);
 }
 */

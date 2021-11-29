@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:51:23 by kychoi            #+#    #+#             */
-/*   Updated: 2021/11/27 16:51:28 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/11/29 21:55:31 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 int	main(int ac, char **av)
 {
 	(void)ac;
-	size_t	len = ft_atoi(av[3]);
+	size_t	len = atoi(av[3]);
 	char	*ft_res = ft_strnstr(av[1], av[2], len);
 	char	*res = strnstr(av[1], av[2], len);
 	printf("ft_strnstr:	%s[%p]\n",ft_res, ft_res);
