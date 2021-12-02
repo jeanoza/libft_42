@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:50:45 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:54 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 12:14:50 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
-	if (!s)
-		return ;
 	i = 0;
-	while (s[i])
+	if (s)
 	{
-		f(i, s);
-		++i;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			++i;
+		}
 	}
 }
 /*

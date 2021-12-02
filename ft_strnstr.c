@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:51:23 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:46:09 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 12:17:55 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (ft_strlen(needle) < 1)
 		return ((char *) haystack);
 	i = 0;
-	while (i < len)
+	while (i < len && haystack[i])
 	{
 		j = 0;
 		while (*(haystack + i + j) == *(needle + j))

@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:19:12 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:46:00 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 11:49:05 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 	if (dstsize <= dst_len)
 		return (src_len + dstsize);
 	i = 0;
-	while (i < dstsize - dst_len - 1)
+	while (i < dstsize - dst_len - 1 && src[i])
 	{
 		*(dst + dst_len + i) = *(src + i);
 		++i;
