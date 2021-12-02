@@ -6,12 +6,11 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:59:19 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:46:11 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 09:53:04 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
