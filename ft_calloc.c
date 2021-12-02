@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:48:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:44:55 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:38:03 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ void	*ft_calloc(size_t count, size_t size)
 
 	len = count * size;
 	result = malloc(len);
-	if (!result)
-		return (0);
-	i = 0;
-	while (i < len)
+	if (result)
 	{
-		result[i] = 0;
-		++i;
+		i = 0;
+		while (i < len)
+		{
+			result[i] = 0;
+			++i;
+		}
+		return ((void *) result);
 	}
-	return ((void *) result);
+	return (0);
 }
 /*
 #include <stdio.h>

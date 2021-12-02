@@ -56,33 +56,22 @@ BONUS_SRCS	= 	ft_lstnew.c \
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
 .c.o:			$(SRCS)
-				@tput setaf 5
-				@echo "compile: $^"
 				$(CC) $(CFLAGS) -c $< -o $@
-				@tput sgr0
 
 $(NAME):		$(OBJS)
-				@tput setaf 2
 				ar rcs $@ $^
-				@tput sgr0
 
 all:			$(NAME)
 
 clean:
-				@tput setaf 1
 				rm -rf $(OBJS) $(BONUS_OBJS)
-				@tput sgr0
 
 fclean:			clean
-				@tput setaf 1
 				rm -f $(NAME)
-				@tput sgr0
 
 re: 			fclean all
 
 bonus:			$(BONUS_OBJS)
-				@tput setaf 3
 				ar rcs $(NAME) $^
-				@tput sgr0
 
 .PHONY:			all clean fclean re bonus
