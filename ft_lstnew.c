@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 14:22:02 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:28 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:48:05 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ t_list	*ft_lstnew(void *content)
 	t_list	*list;
 
 	list = malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list->content = content;
-	list->next = NULL;
-	return (list);
+	if (list)
+	{
+		list->content = content;
+		list->next = NULL;
+		return (list);
+	}
+	return (NULL);
 }
 /*
 #include <stdio.h>

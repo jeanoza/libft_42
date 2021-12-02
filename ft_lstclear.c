@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 16:46:46 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:18 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:43:10 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
-	if (!(*lst))
-		return ;
 	while (*lst)
 	{
 		next = (*lst)->next;

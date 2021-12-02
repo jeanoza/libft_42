@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 22:30:08 by kyubongchoi       #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:27 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:47:02 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 
 	(void)del;
-	if (!lst)
-		return (NULL);
-	new_list = ft_lstnew(f(lst->content));
-	lst = lst->next;
-	while (lst)
+	if (lst)
 	{
-		ft_lstadd_back(&new_list, ft_lstnew(f(lst->content)));
+		new_list = ft_lstnew(f(lst->content));
 		lst = lst->next;
+		while (lst)
+		{
+			ft_lstadd_back(&new_list, ft_lstnew(f(lst->content)));
+			lst = lst->next;
+		}
+		return (new_list);
 	}
-	return (new_list);
+	return (NULL);
 }
 /*
 static	void	*ft_str_toupper(void *str)

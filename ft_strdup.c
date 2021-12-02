@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:29:19 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:50 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:50:00 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1);
 	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (0);
-	i = 0;
-	while (i < len)
+	if (str)
 	{
-		str[i] = s1[i];
-		++i;
+		i = 0;
+		while (i < len)
+		{
+			str[i] = s1[i];
+			++i;
+		}
+		str[i] = 0;
+		return (str);
 	}
-	str[i] = 0;
-	return (str);
+	return (0);
 }
 /*
 #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 22:19:41 by kyubongchoi       #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:23 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:44:52 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
-		return ;
 	while (lst)
 	{
 		f(lst->content);

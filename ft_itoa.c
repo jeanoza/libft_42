@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:49:36 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:06 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/02 14:39:46 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,23 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		++len;
 	str_n = malloc(sizeof(char) * (len + 1));
-	if (!str_n)
-		return (NULL);
-	if (n == -2147483648)
-		ft_strcpy(str_n, "-2147483648");
-	else
+	if (str_n)
 	{
-		if (n < 0)
+		if (n == -2147483648)
+			ft_strcpy(str_n, "-2147483648");
+		else
 		{
-			str_n[0] = '-';
-			n = -n;
+			if (n < 0)
+			{
+				str_n[0] = '-';
+				n = -n;
+			}
+			ft_putnbr(str_n, n, len - 1);
+			str_n[len] = '\0';
 		}
-		ft_putnbr(str_n, n, len - 1);
-		str_n[len] = '\0';
+		return (str_n);
 	}
-	return (str_n);
+	return (NULL);
 }
 /*
 #include<stdio.h>
