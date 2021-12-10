@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:02:16 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 09:45:52 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/04 13:15:04 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
+	size_t	len;
 
+	len = ft_strlen(s);
 	i = 0;
-	while (*(s + i) != (char) c)
-	{
-		if (i == (int) ft_strlen(s))
-			return (0);
+	if (c == 0)
+		return ((char *)(s + len));
+	while (i <= len && s[i] != (char) c)
 		++i;
-	}
+	if (i > len)
+		return (0);
 	return ((char *)(s + i));
 }
+
 /*
 #include <string.h>
 int	main(int ac, char **av)
