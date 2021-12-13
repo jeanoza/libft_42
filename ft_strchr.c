@@ -6,12 +6,28 @@
 /*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:02:16 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/13 20:02:10 by kyubongchoi      ###   ########.fr       */
+/*   Updated: 2021/12/13 20:06:26 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (*(s + i) != (char) c)
+	{
+		if (i == (int) ft_strlen((char *) s))
+			return (0);
+		++i;
+	}
+	return ((char *)(s + i));
+}
+/*
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
@@ -27,7 +43,7 @@ char	*ft_strchr(const char *s, int c)
 		return (0);
 	return ((char *)(s + i));
 }
-
+*/
 /*
 #include <string.h>
 int	main(int ac, char **av)
