@@ -10,3 +10,7 @@ a.out.dSYM/
 libft.a
 libft.so
 
+#Testers
+libft-unit-test/
+libft-war-machine/
+libftTester/
