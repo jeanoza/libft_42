@@ -1,5 +1,7 @@
 HEADER		=	./
 
+SRC_PATH	=	./src/
+
 SRCS		=	ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
@@ -13,6 +15,7 @@ SRCS		=	ft_isalpha.c \
 				ft_strlcpy.c \
 				ft_strlcat.c \
 				ft_strdup.c \
+				ft_strndup_free.c \
 				ft_calloc.c \
 				ft_strnstr.c \
 				ft_memchr.c \
@@ -34,16 +37,7 @@ SRCS		=	ft_isalpha.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-
-OBJS		=	$(SRCS:.c=.o)
-
-CC			=	gcc
-
-CFLAGS		=	-Wall -Werror -Wextra -I $(HEADER)
-
-NAME		=	libft.a
-
-BONUS_SRCS	= 	ft_lstnew.c \
+				ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
@@ -52,11 +46,22 @@ BONUS_SRCS	= 	ft_lstnew.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
+				get_next_line.c\
 
-BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
+OBJ_PATH	=	./bin/
 
-.c.o:			$(SRCS)
-				$(CC) $(CFLAGS) -c $< -o $@
+OBJS 		=	$(addprefix $(OBJ_PATH), $(SRCS:.c=.o))
+
+CC			=	gcc
+
+CFLAGS		=	-Wall -Werror -Wextra
+
+NAME		=	libft.a
+
+
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(OBJ_PATH)
+				$(CC) $(CFLAGS) -o $@ -c $< -I $(HEADER)
 
 $(NAME):		$(OBJS)
 				ar rcs $@ $^
@@ -64,14 +69,11 @@ $(NAME):		$(OBJS)
 all:			$(NAME)
 
 clean:
-				rm -rf $(OBJS) $(BONUS_OBJS)
+				rm -rf $(OBJ_PATH)
 
 fclean:			clean
 				rm -f $(NAME)
 
 re: 			fclean all
 
-bonus:			$(BONUS_OBJS)
-				ar rcs $(NAME) $^
-
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re
