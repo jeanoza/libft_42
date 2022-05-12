@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:49:07 by kychoi            #+#    #+#             */
-/*   Updated: 2022/01/20 14:39:09 by kychoi           ###   ########.fr       */
+/*   Updated: 2022/05/12 21:00:01 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
-char	*ft_strndup_free(char *s1, size_t len);
+char	*ft_strndup(const char *s1, size_t len);
+char	*ft_strndup_free_s1(char *s1, size_t len);
 /* memory */
 void	ft_bzero(void *s, unsigned int n);
 void	*ft_memset(void *b, int c, unsigned int len);
@@ -50,6 +51,7 @@ int		ft_atoi(const char *str);
 /* part 2 */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_free_s1(const char *s1, const char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
@@ -60,6 +62,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
 /* structure for bonus */
 typedef struct s_list
 {

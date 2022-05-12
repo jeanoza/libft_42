@@ -6,7 +6,7 @@
 /*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 19:29:19 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 14:50:00 by kychoi           ###   ########.fr       */
+/*   Updated: 2022/05/12 20:59:19 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,47 @@ char	*ft_strdup(const char *s1)
 			++i;
 		}
 		str[i] = 0;
+		return (str);
+	}
+	return (0);
+}
+
+char	*ft_strndup(const char *s1, size_t len)
+{
+	char	*str;
+	size_t	i;
+
+	str = malloc(sizeof(char) * len + 1);
+	if (str)
+	{
+		i = 0;
+		while (i < len)
+		{
+			str[i] = s1[i];
+			++i;
+		}
+		str[i] = 0;
+		return (str);
+	}
+	return (0);
+}
+
+char	*ft_strndup_free_s1(char *s1, size_t len)
+{
+	char	*str;
+	size_t	i;
+
+	str = malloc(sizeof(char) * len + 1);
+	if (str)
+	{
+		i = 0;
+		while (i < len)
+		{
+			str[i] = s1[i];
+			++i;
+		}
+		str[i] = 0;
+		free(s1);
 		return (str);
 	}
 	return (0);
