@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 09:58:55 by kychoi            #+#    #+#             */
-/*   Updated: 2022/05/12 21:06:18 by kychoi           ###   ########.fr       */
+/*   Updated: 2021/12/30 19:11:38 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,33 @@ static char	*ft_move_cursor(char *buffer)
 	return (NULL);
 }
 
+static char	*ft_strjoin_with_free(const char *s1, const char *s2)
+{
+	char	*result;
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
+	{
+		free((char *)s1);
+		return (NULL);
+	}
+	len = 0;
+	while (s1 && s1[len])
+	{
+		result[len] = s1[len];
+		++len;
+	}
+	free((char *)s1);
+	i = 0;
+	while (s2 && s2[i])
+		result[len++] = s2[i++];
+	result[len] = '\0';
+	return (result);
+}
+
 char	*get_next_line(int fd)
 {
 	char		buffer[BUFFER_SIZE + 1];
@@ -80,7 +107,7 @@ char	*get_next_line(int fd)
 		if (cursor == -1)
 			return (NULL);
 		buffer[cursor] = 0;
-		backup[fd] = ft_strjoin_free_s1(backup[fd], buffer);
+		backup[fd] = ft_strjoin_with_free(backup[fd], buffer);
 		if (cursor == 0 && ft_strchr(backup[fd], '\n'))
 			break ;
 	}
