@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:32:14 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/28 17:05:19 by kyubongchoi      ###   ########.fr       */
+/*   Updated: 2022/05/26 18:09:08 by kychoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
 		return (1);
-	return (1);
+	return (0);
 }

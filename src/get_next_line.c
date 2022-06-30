@@ -6,7 +6,7 @@
 /*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 09:58:55 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/30 19:11:38 by kyubongchoi      ###   ########.fr       */
+/*   Updated: 2022/05/15 14:24:15 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 {
 	char		buffer[BUFFER_SIZE + 1];
 	int			cursor;
-	static char	*backup[OPEN_MAX];
+	static char	*backup[GNL_OPEN_MAX];
 	char		*current;
 	char		*new_line;
 

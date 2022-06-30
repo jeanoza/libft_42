@@ -6,7 +6,7 @@
 /*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:49:07 by kychoi            #+#    #+#             */
-/*   Updated: 2022/03/18 12:52:20 by kyubongchoi      ###   ########.fr       */
+/*   Updated: 2022/05/27 13:43:31 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <stdio.h> // TO_REMOVE : after add my ft_printf on libft
+// # include <stdio.h> // TO_REMOVE : after add my ft_printf on libft
 
 /* ctype */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+int		ft_isspace(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
@@ -47,6 +48,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /* stdlib */
 void	*ft_calloc(size_t count, size_t size);
+void	*ft_realloc(void *old_ptr, size_t old_len, size_t new_len);
 int		ft_atoi(const char *str);
 /* part 2 */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -83,7 +85,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /* get_next_line */
 # ifndef GNL
 #  define GNL
-#  define OPEN_MAX 32
+#  define GNL_OPEN_MAX 32
 #  define BUFFER_SIZE 32
 
 char	*get_next_line(int fd);

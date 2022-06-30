@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:50:30 by kychoi            #+#    #+#             */
-/*   Updated: 2021/12/02 14:52:16 by kychoi           ###   ########.fr       */
+/*   Updated: 2022/06/11 17:48:18 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	**ft_free_all_tab(char **tab)
 	unsigned int	i;
 
 	i = 0;
-	while (tab[i])
+	while (tab && tab[i])
 	{
 		free(tab[i]);
 		++i;
@@ -96,21 +96,3 @@ char	**ft_split(char const *s, char c)
 	strs[idx_strs] = NULL;
 	return (strs);
 }
-/*
-#include<stdio.h>
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("s1 length: %zu\n", ft_strlen(av[1]));
-	char **strs = ft_split(av[1], av[2][0]);
-	int	i = 0;
-	while (i < 2)
-	{
-		printf("strs[%d]	:%s\n", i, strs[i]);
-		free(strs[i]);
-		++i;
-	}
-	free(strs);
-	return (0);
-}
-*/

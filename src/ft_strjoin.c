@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kychoi <kychoi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kyubongchoi <kyubongchoi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:50:49 by kychoi            #+#    #+#             */
-/*   Updated: 2022/03/20 15:21:48 by kychoi           ###   ########.fr       */
+/*   Updated: 2022/06/11 10:13:45 by kyubongchoi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*ft_strjoin_free_s1(char *s1, const char *s2)
 		result[len] = s1[len];
 		++len;
 	}
-	free(s1);
+	if (s1)
+		free(s1);
 	i = 0;
 	while (s2 && s2[i])
 		result[len++] = s2[i++];
@@ -71,23 +72,21 @@ char	*ft_strjoin_free_all(char *s1, char *s2)
 	len = ft_strlen(s1) + ft_strlen(s2);
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
-	{
-		free(s1);
-		free(s2);
 		return (NULL);
-	}
 	len = 0;
 	while (s1 && s1[len])
 	{
 		result[len] = s1[len];
 		++len;
 	}
-	free(s1);
+	if (s1)
+		free(s1);
 	i = 0;
 	while (s2 && s2[i])
 		result[len++] = s2[i++];
 	result[len] = '\0';
-	free(s2);
+	if (s2)
+		free(s2);
 	return (result);
 }
 
